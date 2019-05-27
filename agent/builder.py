@@ -30,7 +30,7 @@ def build_agent(output, server_url, platform, hello_interval, idle_time, max_fai
         agent_config.write(config_file)
     cwd = os.getcwd()
     os.chdir(working_dir)
-    shutil.move('agent.py', prog_name + '.py')
+    shutil.move('payload.py', prog_name + '.py')
     if platform == 'linux':
         os.system('pyinstaller --noconsole --onefile ' + prog_name + '.py')
         agent_file = os.path.join(working_dir, 'dist', prog_name)
